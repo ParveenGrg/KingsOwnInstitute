@@ -1,0 +1,49 @@
+﻿@model KingsOwnInstitute.Data.ViewModels.NewSeminarViewModel
+
+@{
+    ViewData["Title"] = "Update Seminar";
+}
+
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="border p-3 mt-4 row">
+                <div class="row pb-2">
+                    <h2 class="text-primary">Update Seminar</h2>
+                    <hr />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="mb-3 col-6">
+                    <label asp-for="SeminarTypeId" class="control-label"></label>
+                    <select asp-for="SeminarTypeId" class="form-control" asp-items="ViewBag.SeminarTypes"></select>
+                    <span asp-validation-for="SeminarTypeId" class="text-danger"></span>
+                </div>
+                <div class="mb-3 col-6">
+                    <label asp-for="Status" class="control-label"></label>
+                    <select asp-for="Status" class="form-control"></select>
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </div>
+                <div class="mb-3 col-6">
+                    <label asp-for="SeminarDate" class="control-label"></label>
+                    <input asp-for="SeminarDate" type="date" class="form-control" />
+                    <span asp-validation-for="SeminarDate" class="text-danger"></span>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary" style="width:150px">Update</button>
+                    <a asp-controller="Movie" asp-action="Index" class="btn btn-secondary" style="width:150px">Back to List</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

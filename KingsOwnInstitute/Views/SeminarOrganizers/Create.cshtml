@@ -1,0 +1,43 @@
+﻿@model KingsOwnInstitute.Data.ViewModels.NewSemOrgViewModel
+
+@{
+    ViewData["Title"] = "Seminar Organizer";
+}
+
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="border p-3 mt-4 row">
+                <div class="row pb-2">
+                    <h2 class="text-primary">Add Seminar Organizer</h2>
+                    <hr />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="SeminarId" class="control-label"></label>
+                    <select asp-for="SeminarId" class="form-control" asp-items="ViewBag.Seminars">
+                        <option disabled selected>--Select Seminar--</option>
+                    </select>
+                    <span asp-validation-for="SeminarId" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="OrganizerId" class="control-label"></label>
+                    <select asp-for="OrganizerId" class="form-control" asp-items="ViewBag.Organizers">
+                        <option disabled selected>--Select Organizer--</option>
+                    </select>
+                    <span asp-validation-for="OrganizerId" class="text-danger"></span>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary" style="width:150px">Create</button>
+                    <a asp-controller="Movie" asp-action="Index" class="btn btn-secondary" style="width:150px">Back to List</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
