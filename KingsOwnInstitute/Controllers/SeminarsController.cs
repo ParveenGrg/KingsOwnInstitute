@@ -59,7 +59,7 @@ namespace KingsOwnInstitute.Controllers
                 Id = seminarDetails.Id,
                 SeminarTypeId = seminarDetails.SeminarTypeId,
                 SeminarDate = seminarDetails.SeminarDate,
-                Status = (Data.ViewModels.Status)seminarDetails.Status
+                Status = seminarDetails.Status,
             };
             var seminarDropdownsData = await _service.GetSeminarDropdownsValues();
             ViewBag.SeminarTypes = new SelectList(seminarDropdownsData.SeminarTypes, "Id", "TypeName");

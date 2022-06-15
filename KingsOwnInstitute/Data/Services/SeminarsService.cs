@@ -24,7 +24,7 @@ namespace KingsOwnInstitute.Data.Services
                 Name = data.Name,
                 SeminarTypeId = data.SeminarTypeId,
                 SeminarDate = data.SeminarDate,
-                Status = (Models.Status)data.Status
+                Status = data.Status
             };
             await _context.Seminars.AddAsync(newSeminar);
             await _context.SaveChangesAsync();
@@ -55,7 +55,7 @@ namespace KingsOwnInstitute.Data.Services
                 dbSeminar.SeminarTypeId = data.SeminarTypeId;
                 dbSeminar.Name = data.Name;
                 dbSeminar.SeminarDate = data.SeminarDate;
-                dbSeminar.Status = (Models.Status)data.Status;
+                dbSeminar.Status = data.Status;
             }
             await _context.SaveChangesAsync();
         }

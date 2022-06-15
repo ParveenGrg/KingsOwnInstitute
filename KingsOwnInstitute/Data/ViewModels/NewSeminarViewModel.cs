@@ -27,10 +27,4 @@ namespace KingsOwnInstitute.Data.ViewModels
         public DateTime SeminarDate { get; set; }
         public SeminarType SeminarType { get; set; }
     }
-    public enum Status
-    {
-        Upcoming,
-        Ongoing,
-        Completed
-    }
 }
